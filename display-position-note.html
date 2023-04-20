@@ -7,12 +7,13 @@
     <title>Lab:3 Box model, Display, Flexbox</title>
     <style>
         .box {
-            background-color: rgb(204, 29, 204);
+            background-color: violet;
             border: 1px dashed gray;
         }
         .playbox{
-            background-color: pink;
+            background-color: lightcyan;
             border: 1px dashed gray;
+            padding: 10px;
         }
 
     </style>
@@ -25,10 +26,10 @@
          padding: 20px;">
         <div style="
             background-color: greenyellow;
-            border: 20px solid rgb(62, 226, 226);
+            border: 20px solid lightskyblue;
             padding: 20px;">
             <div style="
-                background-color: orangered; 
+                background-color: orange; 
                 border: 20px solid yellow;">
             Simple Box
             </div>
@@ -38,34 +39,126 @@
     <h1>CSS Display</h1>
 
     <h2>inline</h2>
-    <div class="playbox" style="margin: 0;">
-        <div style="display: inline; background-color: blueviolet;">inline text1</div>
-        <div style="display: inline; background-color: blue;">inline text2</div>
-        <div style="display: inline; background-color: blueviolet;">inline text3</div>
-        <div style="display: inline; background-color: blueviolet;">inline text4</div>
-        <div style="display: inline; background-color: blueviolet;">inline text5</div>
-
+    <div class="playbox">
+        <div style="display: inline; background-color: violet;">inline text1</div>
+        <div style="display: inline; background-color: lightskyblue;">inline text2</div>
+        <div style="display: inline; background-color: greenyellow;">inline text3</div>
+        <div style="display: inline; background-color: yellow;">inline text4</div>
+        <div style="display: inline; background-color: orange;">inline text5</div>
     </div>
 
     <h2>block</h2>
     <div class="playbox">
-
+        <div style="display: block; background-color: violet;">block text1</div>
+        <div style="display: block; background-color: lightskyblue;">block text2</div>
+        <div style="display: block; background-color: greenyellow;">block text3</div>
+        <div style="display: block; background-color: yellow;">block text4</div>
+        <div style="display: block; background-color: orange;">block text5</div>
     </div>
 
     <h2>inline-block</h2>
     <div class="playbox">
-
+        <div style="display: inline-block; ">apple</div>
+        <div style="display: inline-block; ">orange</div>
+        <div style="display: inline-block; ">mango</div>
+        <div style="display: inline-block; ">watermelon</div>
     </div>
 
     <h2>none</h2>
     <div class="playbox">
-
+        <div style="display: inline-block; ">apple</div>
+        <div style="display: inline-block; ">orange</div>
+        <div style="display: none; ">mango</div>
+        <div style="display: inline-block; ">watermelon</div>
     </div>
 
     <h2>display:none vs visibility:hidden</h2>
     <div class="playbox">
-
+        <div style="display: inline-block; ">apple</div>
+        <div style="display: inline-block; visibility:hidden;">orange</div>
+        <div style="display: none;">mango</div>
+        <div style="display: inline-block; ">watermelon</div>
     </div>
+
+    <h1>CSS Position</h1>
+
+    <h2>Static</h2>
+    <div class="playbox">
+        <div style="
+            position: static;
+            background-color: rgba(250, 128, 114, 0.8);
+            border: 1px solid salmon;
+            width: 0px;
+            padding: 50px;">
+        </div>
+    </div>
+
+    <h2>Absolute</h2>
+    <h3>Fixed width/height</h3>
+    <div class="playbox">
+        <div style="
+            position: absolute;
+            background-color: rgba(250, 128, 114, 0.8);
+            border: 1px solid salmon;
+            width: 100px;
+            height: 100px;">
+        </div>
+    </div>
+    <h3>No width/height</h3>
+    <div class="playbox">
+        <div style="
+            position: absolute;
+            background-color: rgba(250, 128, 114, 0.8);
+            border: 1px solid salmon;
+            width: 100%;">
+        </div>
+    </div>
+    <h3>Fixed width/height + right/top</h3>
+    <div class="playbox">
+        <div style="
+            position: absolute;
+            border-radius: 50%;
+            text-align: center;
+            color: white;
+            background-color: red;
+            border: 1px solid darkred;
+            width: 20px;
+            height: 20px;
+            right: 20px;">
+            X
+            </div>
+        <div style="
+        background-color: rgba(250, 128, 114, 0.8);
+        border: 1px solid salmon;
+        padding: 50px;">
+        </div>
+    </div>
+
+    <h3>Backdrop</h3>
+    <div style="
+        position:fixed;
+        padding:0;
+        margin:0;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+        background:rgba(0, 0, 0, 0.5);">
+        <div style="
+        color: #fff;
+        font-size: 50px;
+        background-color: lightseagreen;
+        text-align: center;
+        width: 250px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        ">
+        Songkran festival 2023
+        </div>
+    </div>
+    
     
 </body>
 </html> 
