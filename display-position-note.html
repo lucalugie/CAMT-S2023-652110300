@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab:3 Box model, Display, Flexbox</title>
+    <style>
+        .box {
+            background-color: rgb(204, 29, 204);
+            border: 1px dashed gray;
+        }
+        .playbox{
+            background-color: pink;
+            border: 1px dashed gray;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Box Model</h1>
+
+    <div class="box" 
+         style="
+         padding: 20px;">
+        <div style="
+            background-color: greenyellow;
+            border: 20px solid rgb(62, 226, 226);
+            padding: 20px;">
+            <div style="
+                background-color: orangered; 
+                border: 20px solid yellow;">
+            Simple Box
+            </div>
+        </div>
+    </div>
+
+    <h1>CSS Display</h1>
+
+    <h2>inline</h2>
+    <div class="playbox" style="margin: 0;">
+        <div style="display: inline; background-color: blueviolet;">inline text1</div>
+        <div style="display: inline; background-color: blue;">inline text2</div>
+        <div style="display: inline; background-color: blueviolet;">inline text3</div>
+        <div style="display: inline; background-color: blueviolet;">inline text4</div>
+        <div style="display: inline; background-color: blueviolet;">inline text5</div>
+
+    </div>
+
+    <h2>block</h2>
+    <div class="playbox">
+
+    </div>
+
+    <h2>inline-block</h2>
+    <div class="playbox">
+
+    </div>
+
+    <h2>none</h2>
+    <div class="playbox">
+
+    </div>
+
+    <h2>display:none vs visibility:hidden</h2>
+    <div class="playbox">
+
+    </div>
+    
+</body>
+</html> 
