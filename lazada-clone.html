@@ -6,34 +6,197 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab:3 lazada-clone</title>
     <style>
-        .column {
-            background-color: aquamarine;
-            border-radius: 20px;
-            border: 1px solid black;
-            display: inline-block;
-            width: 300px;
-            height: 400px;
+        body {
+            margin: 0;
         }
+        p, h1{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .header {
+            background-color:rgb(255, 255, 255);
+            width: 100%;
+            position:fixed;
+        }
+        .logo {
+            padding: 0 10px 0 10px;
+        }
+        .main-content{
+            background-color:rgb(233, 233, 233);
+            width: 100%;
+            height: 100%;
+        }
+        .top-body li{
+            margin-top: 100px;
+            list-style-type: none;
+            display: inline-block;
+        }
+        .top-body img{
+            width: 40px;
+            display: inline;
+        }
+        .bottom-body {
+            margin: 5px;
+        }
+        .column {
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            display: inline-block;
+            width: 200px;
+            height: 350px;
+            margin: 5px;
+        }
+        .column img{
+            width: 200px;
+            height: 200px;
+            border-radius: 10px 10px 0 0;
+            padding: 0;
+            margin: 0;
+        }
+        .column .row2{
+            padding: 0 10px 0 10px;
+            margin: 0;
+        }
+        .product p{
+            margin: 5px 0 30px 0;
+        }
+        .price p{
+            font-size: 24px;
+            color: rgb(252, 89, 71);
+            font-weight: bold; 
+            margin: 0;
+            line-height: 50%;
+        }
+        .discount {
+            line-height: 0;
+        }
+
     </style>
 </head>
 <body>
-    <div >
-        <div class="logo">
-        
+    <div class="header">
+        <div class="logo" >
+            <img src="lab3web/lazadalogo.png" width="130px">
         </div>
-
     </div>
-    <div >
-        <div class="top-body">
 
+    <div class="main-content">
+        <div class="top-body" style="text-align: center;">
+            <li><img src="lab3web/lazadaheart.png"></li>
+            <li><h1 style="color: navy;">Just For You</h1></li>
+            <li><img src="lab3web/lazadaheart.png"></li>
         </div>
-        <div class="body">
+        
+        <div class="bottom-body">
+
             <div class="column">
-                <div class="image"></div>
-                <div class="product"></div>
-                <div class="price"></div>
-                <div class="discount"></div>
+                <div class="row1">
+                    <div class="image">
+                    <img src="lab3web/product1.jpg">
+                </div>
+                </div>
+                <div class="row2">
+                    <div class="product">
+                    <p>กิ๊บติดผมน่ารักสไตล์เกาหลีสำหรับสาวแฟชั่นผม</p>
+                    </div>
+                    <div class="price">
+                        <p>฿14</p>
+                    </div>
+                    <div class="discount">
+                        <p><s style="color: gray;">฿32</s>  -52%</p>
+                    </div>
+                    </div>
             </div>
+            <div class="column">
+                <div class="row1">
+                    <div class="image">
+                    <img src="lab3web/product2.png">
+                </div>
+                </div>
+                <div class="row2">
+                    <div class="product">
+                    <p>Luna shop เสื้อยืดผญสวยๆเสื้อยืด oversize</p>
+                    </div>
+                    <div class="price">
+                        <p>฿59</p>
+                    </div>
+                    <div class="discount">
+                        <p><s style="color: gray;">฿138</s>  -57%</p>
+                    </div>
+                    </div>
+            </div>
+            <div class="column">
+                <div class="row1">
+                    <div class="image">
+                    <img src="lab3web/product3.png">
+                </div>
+                </div>
+                <div class="row2">
+                    <div class="product">
+                    <p>(ของแท้) พร้อมส่ง แก้วเก็บความเย็น Tyeso แบบใหม่</p>
+                    </div>
+                    <div class="price">
+                        <p>฿238</p>
+                    </div>
+                    <div class="discount">
+                        <p><s style="color: gray;">฿399</s>  -40%</p>
+                    </div>
+                    </div>
+            </div>
+            <div class="column">
+                <div class="row1">
+                    <div class="image">
+                    <img src="lab3web/product4.png">
+                </div>
+                </div>
+                <div class="row2">
+                    <div class="product">
+                    <p>น่ารักมากกระเป๋าผ้าขนนุ่ม พับเก็บได้ใบใหญ่คุ้มมาก</p>
+                    </div>
+                    <div class="price">
+                        <p>฿35</p>
+                    </div>
+                    <div class="discount">
+                        <p><s style="color: gray;">฿69</s>  -49%</p>
+                    </div>
+                    </div>
+            </div>
+            <div class="column">
+                <div class="row1">
+                    <div class="image">
+                    <img src="lab3web/product5.jpg">
+                </div>
+                </div>
+                <div class="row2">
+                    <div class="product">
+                    <p>หนีบผมV8 กิ๊บติดผมผ้ากํามะหยี่ขนนุ่มนิ่ม น่ารักมาก</p>
+                    </div>
+                    <div class="price">
+                        <p>฿15</p>
+                    </div>
+                    <div class="discount">
+                        <p><s style="color: gray;">฿59</s>  -76%</p>
+                    </div>
+                    </div>
+            </div>
+            <div class="column">
+                <div class="row1">
+                    <div class="image">
+                    <img src="lab3web/product6.png">
+                </div>
+                </div>
+                <div class="row2">
+                    <div class="product">
+                    <p>【Ganggang】ตุ๊กตาไก่ ของเล่นตุ๊กตา ตุ๊กตาเจี๊ยบ</p>
+                    </div>
+                    <div class="price">
+                        <p>฿164</p>
+                    </div>
+                    <div class="discount">
+                        <p><s style="color: gray;">฿320</s>  -49%</p>
+                    </div>
+                    </div>
+            </div>
+
         </div>
 
     </div>
