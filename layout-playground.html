@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/47f656f729.js" crossorigin="anonymous"></script>
+  <title>Layout Playground</title>
+  <style>
+    .playground {
+      padding: 0;
+      margin: 0;
+      border: 1px solid palevioletred;
+      width: 100%;
+      background-color: pink;
+      min-height: 300px;
+      position: relative;
+    }
+    .playground > body {
+      margin: 0;
+      padding: 0;
+    }
+    .menu-container{
+        border-top: 1px solid #fff;
+        border-left: 1px solid #fff;
+        border-right: 1px solid #fff;
+        width: 100px;
+        margin: 5px;
+    }
+    .menu-item{
+        color: #fff;
+        border-bottom: 1px solid #fff;
+        background-color: palevioletred;
+        padding: 5px;
+        text-align: center;
+    }
+    .header-container{
+        margin: 5px;
+        padding: 12.5px;
+        border: 1px solid #fff;
+        color: #fff;
+        background-color: palevioletred;
+        display: flex;
+        justify-content: space-between;
+    }
+    .navigation-container{
+        margin: 5px;
+        padding: 12.5px;
+        border: 1px solid #fff;
+        color: #fff;
+        background-color: palevioletred;
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+    }
+    .card-list-container{
+        display: flex;
+    }
+    .card-content{
+        width: 230px;
+        height: 350px;
+        background-color: palevioletred;
+        margin: 5px;
+    }
+    .card-content-image-section img{
+        width: 230px;
+        height: 250px;
+    }
+    .product-price{
+        text-align: right;
+        font-size: large;
+        font-family: fantasy;
+        color: black;
+    }
+    .product-name{
+        font-size: medium;
+        font-weight: bold;
+    }
+    .product-description{
+        font-size: small;
+    }
+    .card-content-detail-section {
+        padding: 10px;
+        color: #fff
+    }
+    .sidebar-container{
+        background-color: palevioletred;
+        width: 250px;
+        margin: 5px;
+        border: 1px solid #fff;
+        color: #fff;
+    }
+    .sidebar-profile-section{
+        padding: 10px;
+        font-size: x-large;
+        font-weight: bold;
+        border-bottom: 1px solid #fff;
+    }
+    .sidebar-menu-section{
+        padding: 10px;
+        height: 250px;
+    }
+    .sidebar-footer-section{
+        padding: 10px;
+        border-top: 1px solid #fff;
+    }
+  </style>
+</head>
+<body>
+  
+  <h1>Layout with Flexbox</h1>
+  <p>create css classes for building layout/UI</p>
+  <p style="font-weight: bold;">DO NOT CHANGE A HTML STRUCTURE</p>
+  
+  <h2>Vertical Menu</h2>
+  <h3>example</h3>
+  <img src="./images/layouts/vertical-menu.png">
+  <br>
+  <h3>playground</h3>
+  <div class="playground">
+    <style>
+
+    </style>
+
+    <div class="menu-container">
+      <div class="menu-item">First Menu</div>
+      <div class="menu-item">Menu 2</div>
+      <div class="menu-item">Menu 3</div>
+      <div class="menu-item">Menu 4</div>
+      <div class="menu-item">Menu 5</div>
+      <div class="menu-item">Last Menu</div>
+    </div>
+  </div>
+
+  <h2>Header</h2>
+  <h3>example</h3>
+  <img src="./images/layouts/header.png">
+  <br>
+  <h3>playground</h3>
+  <div class="playground">
+    <style>
+
+    </style>
+
+    <div class="header-container">
+      <div class="header-content-left"><i class="fa-solid fa-arrow-left"></i></div>
+      <div class="header-content">Header</div>
+      <div class="header-content-right"><i class="fa-solid fa-heart"></i></div>
+    </div>
+  </div>
+
+  <h2>Navigation Tab</h2>
+  <h3>example</h3>
+  <img src="./images/layouts/navigation-tab.png">
+  <br>
+  <h3>playground</h3>
+  <div class="playground">
+    <style>
+
+    </style>
+
+    <div class="navigation-container">
+      <div class="navigation-item">
+        <div class="navigation-item-icon"><i class="fa-solid fa-heart"></i></div>
+        <div class="navigation-item-label">
+          First Menu
+        </div>
+      </div>
+      <div class="navigation-item">
+        <div class="navigation-item-icon"><i class="fa-solid fa-house"></i></div>
+        <div class="navigation-item-label">
+          Second Menu
+        </div>
+      </div>
+      <div class="navigation-item">
+        <div class="navigation-item-icon"><i class="fa-solid fa-person"></i></div>
+        <div class="navigation-item-label">
+          Third Menu
+        </div>
+      </div>
+      <div class="navigation-item">
+        <div class="navigation-item-icon"><i class="fa-solid fa-heart-crack"></i></div>
+        <div class="navigation-item-label">
+          Fourth Menu
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Card</h2>
+  <h3>example</h3>
+  <img src="./images/layouts/card.png">
+  <br>
+  <h3>playground</h3>
+  <div class="playground">
+    <style>
+
+    </style>
+
+    <div>
+      <div class="card-list-container">
+        <div class="card-container">
+          <div class="card-content">
+            <div class="card-content-image-section">
+              <img src="lab3web/product2.png">
+            </div>
+            <div class="card-content-detail-section">
+              <div class="product-name">
+                Elite Obsidian
+              </div>
+              <div class="product-description">
+                Awesome product from Mars made by hand of Ultraman
+              </div>
+              <div class="product-price">
+                1,000
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-container">
+            <div class="card-content">
+              <div class="card-content-image-section">
+                <img src="lab3web/product2.png">
+              </div>
+              <div class="card-content-detail-section">
+                <div class="product-name">
+                  Elite Obsidian
+                </div>
+                <div class="product-description">
+                  Awesome product from Mars made by hand of Ultraman
+                </div>
+                <div class="product-price">
+                  1,000
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-container">
+            <div class="card-content">
+              <div class="card-content-image-section">
+                <img src="lab3web/product2.png">
+              </div>
+              <div class="card-content-detail-section">
+                <div class="product-name">
+                  Elite Obsidian
+                </div>
+                <div class="product-description">
+                  Awesome product from Mars made by hand of Ultraman
+                </div>
+                <div class="product-price">
+                  1,000
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-container">
+            <div class="card-content">
+              <div class="card-content-image-section">
+                <img src="lab3web/product2.png">
+              </div>
+              <div class="card-content-detail-section">
+                <div class="product-name">
+                  Elite Obsidian
+                </div>
+                <div class="product-description">
+                  Awesome product from Mars made by hand of Ultraman
+                </div>
+                <div class="product-price">
+                  1,000
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-container">
+            <div class="card-content">
+              <div class="card-content-image-section">
+                <img src="lab3web/product2.png">
+              </div>
+              <div class="card-content-detail-section">
+                <div class="product-name">
+                  Elite Obsidian
+                </div>
+                <div class="product-description">
+                  Awesome product from Mars made by hand of Ultraman
+                </div>
+                <div class="product-price">
+                  1,000
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <h2>Sidebar</h2>
+  <h3>example</h3>
+  <img src="./images/layouts/sidebar.png">
+  <br>
+  <h3>playground</h3>
+  <div class="playground">
+    <style>
+
+    </style>
+
+    <div class="sidebar-container">
+      <div class="sidebar-profile-section">
+        <div>I'm Header</div>
+      </div>
+      <div class="sidebar-menu-section">
+        <div class="sidebar-menu-item"> Menu 1</div>
+        <div class="sidebar-menu-item"> Menu 2</div>
+        <div class="sidebar-menu-item"> Menu 3</div>
+      </div>
+      <div class="sidebar-footer-section">
+        <div>
+          Logout
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+</body>
+</html>
