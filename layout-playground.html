@@ -21,89 +21,102 @@
       padding: 0;
     }
     .menu-container{
-        border-top: 1px solid #fff;
-        border-left: 1px solid #fff;
-        border-right: 1px solid #fff;
-        width: 100px;
-        margin: 5px;
+      border: 1px solid #fff;
+      display: flex;
+      flex-direction: column;
+      width: 100px;
+      margin: 5px;
     }
     .menu-item{
-        color: #fff;
-        border-bottom: 1px solid #fff;
-        background-color: palevioletred;
-        padding: 5px;
-        text-align: center;
+      color: #fff;
+      border-bottom: 1px solid #ffffff;
+      background-color: palevioletred;
+      padding: 5px;
+      text-align: center;
+    }
+    .menu-item:last-child{
+      border-bottom:unset;
     }
     .header-container{
-        margin: 5px;
-        padding: 12.5px;
-        border: 1px solid #fff;
-        color: #fff;
-        background-color: palevioletred;
-        display: flex;
-        justify-content: space-between;
+      margin: 5px;
+      padding: 12.5px;
+      border: 1px solid #fff;
+      color: #fff;
+      background-color: palevioletred;
+      display: flex;
+      justify-content: space-between;
     }
     .navigation-container{
-        margin: 5px;
-        padding: 12.5px;
-        border: 1px solid #fff;
-        color: #fff;
-        background-color: palevioletred;
-        display: flex;
-        justify-content: space-around;
-        text-align: center;
+      margin: 5px;
+      padding: 12.5px;
+      border: 1px solid #fff;
+      background-color: palevioletred;
+      display: flex;
+    }
+    .navigation-item{
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
     }
     .card-list-container{
-        display: flex;
-        flex-wrap: wrap;
+      display: flex;
+      flex-wrap: wrap;
     }
     .card-content{
-        width: 230px;
-        height: 350px;
-        background-color: palevioletred;
-        margin: 5px;
+      width: 230px;
+      height: 350px;
+      background-color: palevioletred;
+      margin: 5px;
     }
     .card-content-image-section img{
-        width: 230px;
-        height: 250px;
+      width: 230px;
+      height: 250px;
     }
     .product-price{
-        text-align: right;
-        font-size: large;
-        font-family: fantasy;
-        color: black;
+      text-align: right;
+      font-size: large;
+      font-family: fantasy;
+      color: black;
     }
     .product-name{
-        font-size: medium;
-        font-weight: bold;
+      font-size: medium;
+      font-weight: bold;
     }
     .product-description{
-        font-size: small;
+      font-size: small;
     }
     .card-content-detail-section {
-        padding: 10px;
-        color: #fff
+      padding: 10px;
+      color: #fff
     }
     .sidebar-container{
-        background-color: palevioletred;
-        width: 250px;
-        margin: 5px;
-        border: 1px solid #fff;
-        color: #fff;
+      background-color: palevioletred;
+      width: 250px;
+      height: 100%;
+      border: 1px solid #fff;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
     }
     .sidebar-profile-section{
-        padding: 10px;
-        font-size: x-large;
-        font-weight: bold;
-        border-bottom: 1px solid #fff;
+      padding: 10px;
+      font-size: x-large;
+      font-weight: bold;
+      border-bottom: 1px solid #fff;
     }
     .sidebar-menu-section{
-        padding: 10px;
-        height: 250px;
+      border-bottom: 1px solid #fff;
+      flex-grow: 1;
+    }
+    .sidebar-menu-item{
+      padding: 10px;
     }
     .sidebar-footer-section{
-        padding: 10px;
-        border-top: 1px solid #fff;
+      padding: 5px 0 5px 10px;
     }
   </style>
 </head>
@@ -219,6 +232,24 @@
           </div>
         </div>
         <div class="card-container">
+            <div class="card-content">
+              <div class="card-content-image-section">
+                <img src="lab3web/product2.png">
+              </div>
+              <div class="card-content-detail-section">
+                <div class="product-name">
+                  Elite Obsidian
+                </div>
+                <div class="product-description">
+                  Awesome product from Mars made by hand of Ultraman
+                </div>
+                <div class="product-price">
+                  1,000
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-container">
             <div class="card-content">
               <div class="card-content-image-section">
                 <img src="lab3web/product2.png">
