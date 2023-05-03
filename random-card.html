@@ -59,32 +59,34 @@
 </head>
 <body>
     <div class="main-content">
-        <div class="card">
-            <div class="suit">♥</div>
-            <div class="rank">0</div>
-        </div>
-        <div class="card">
-            <div class="suit">♥</div>
-            <div class="rank">0</div>
-        </div>
-        <div class="card">
-            <div class="suit">♥</div>
-            <div class="rank">0</div>
-        </div>
-        <div class="card">
-            <div class="suit">♥</div>
-            <div class="rank">0</div>
-        </div>
+        
+            <div class="card heart">
+                <div class="suit">♥</div>
+                <div class="rank">A</div>
+            </div>
+            <div class="card diamond">
+                <div class="suit">♦</div>
+                <div class="rank">A</div>
+            </div>
+            <div class="card">
+                <div class="suit">♣</div>
+                <div class="rank">A</div>
+            </div>
+            <div class="card">
+                <div class="suit">♠</div>
+                <div class="rank">A</div>
+            </div>    
 
     </div>
     <div class="footer">
         <button type="button" onclick="generateCard()">Click to Random</button>
-    </div>
+    </div>  
+    
 
     <script>
         // card number and type
         var CARD_TYPE = ['♣', '♦', '♥', '♠']
-        var CARD_NUMBER = ['A', '1', '2', '3', '4', '5', '6','7', '8', '9', '10', 'J', 'Q', 'K']
+        var CARD_NUMBER = ['A', '2', '3', '4', '5', '6','7', '8', '9', '10', 'J', 'Q', 'K']
         //shows card
         function generateCard() {
             var cardDisplay = document.getElementsByClassName('card');
@@ -92,13 +94,10 @@
             for (let i = 0; i < cardDisplay.length; i++) {
                 //keep the random suit and rank
                 var suit = CARD_TYPE[random(CARD_TYPE.length)];
-                var value = CARD_NUMBER[random(CARD_NUMBER.length)];
+                var rank = CARD_NUMBER[random(CARD_NUMBER.length)];
                 //set the card to be that random
                 var suitDisplay = cardDisplay[i].querySelector('.suit');
                 var rankDisplay = cardDisplay[i].querySelector('.rank');
-                //let it shows
-                suitDisplay.innerText = suit;
-                rankDisplay.innerText = value;
                 //color red if suit equal ♥ or ♦
                 if (suit === '♥' || suit === '♦') {
                     rankDisplay.style.color = 'red';
@@ -109,6 +108,9 @@
                     suitDisplay.style.color = 'black';
                     cardDisplay[i].style.borderColor = 'black';
                 }
+                //let it shows
+                suitDisplay.innerText = suit;
+                rankDisplay.innerText = rank;
             }// end for loop
         }
         // random function
@@ -118,3 +120,16 @@
     </script>
 </body>
 </html>
+
+<!-- *How to do*
+    1. layout
+    2. board
+    3. card ui
+    4. button
+    5. create click event for button
+    6. console.log when click on button
+    7. find the way to change text card
+    8. find the way to change text for every card
+    9. text random fuction
+    10. change text by random value
+-->
