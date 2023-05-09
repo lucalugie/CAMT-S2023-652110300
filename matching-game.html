@@ -13,29 +13,33 @@
             width: 100%;
         }
         .board-content{
-            background-color: pink;
+            background-color: rgb(255, 112, 136);
             border-radius: 5px 5px 0 0;
             display: flex;
             flex-direction: row;
-
         }
         .card-zone{
-            border-right: 1px solid black;
+            display: flex;
+            flex-wrap: wrap;
             width:100%;
-            height: 600px;
+            height: 100%;
         }
         .player-zone{
-            width: 250px;
+            width: 20%;
             text-align: center;
             border-radius: 0 5px 0 0;
+            border-left: 1px solid black;
+            color: #ffffff;
 
         }
         .player-a{
             border-bottom: 1px solid black;
-            height: 295px;
+            height: 50%;
+            padding: 10px;
         }
         .player-b{
-            height: 295px;
+            height: 50%;
+            padding: 10px;
         }
         .player-score{
             font-size: 50px;
@@ -51,8 +55,9 @@
             height: 160px;
             border: 1px solid black;
             border-radius: 5px;
-            margin: 20px;
+            margin: 5px;
             background-color: #ffffff;
+            box-shadow: 1px 1px 5px 1px #00000025;
         }
         .card-title {
             text-align: right;
@@ -64,7 +69,14 @@
             text-align: center;
             font-size: 50px;
         }
-        
+        .face-down {
+            background-color: rgb(204, 204, 204);
+            border: 1px solid #ffffff;
+            color: #ffffff;
+        }
+        .face-down .card-body{
+            padding: 45% 0;
+        }
 
     </style>
 </head>
@@ -79,13 +91,13 @@
                 <div class="card-body">
                     9
                 </div>
-                <div class="card face-down">
-                    <div class="card-title">
-                        
-                  </div>
-                    <div class="card-body">
-                        ?
-                    </div>
+            </div>
+            <div class="card face-down">
+                <div class="card-title">
+                    
+              </div>
+                <div class="card-body">
+                    ?
                 </div>
             </div>
           </div>
@@ -109,9 +121,78 @@
           </div>
         </div>
         <div class="footer">
-            <button class="new-game-button">New Game</button>
+            <button class="new-game-button" onclick="renderCardList()">New Game</button>
         </div>
       </div>
+
+      <script>
+        var cardList = [
+            { value: ['♣', 'A'], isFaceDown: true },
+            { value: ['♣', '2'], isFaceDown: false },
+            { value: ['♣', '3'], isFaceDown: true },
+            { value: ['♣', '4'], isFaceDown: false },
+            { value: ['♣', '5'], isFaceDown: true },
+            { value: ['♣', '6'], isFaceDown: true },
+            { value: ['♣', '7'], isFaceDown: true },
+            { value: ['♣', '8'], isFaceDown: false },
+            { value: ['♣', '9'], isFaceDown: true },
+            { value: ['♣', '10'], isFaceDown: true },
+            { value: ['♣', 'J'], isFaceDown: true },
+            { value: ['♣', 'Q'], isFaceDown: true },
+            { value: ['♣', 'K'], isFaceDown: false },
+            { value: ['♥', 'A'], isFaceDown: true },
+            { value: ['♥', '2'], isFaceDown: true },
+            { value: ['♥', '3'], isFaceDown: false },
+            { value: ['♥', '4'], isFaceDown: false },
+            { value: ['♥', '5'], isFaceDown: true },
+            { value: ['♥', '6'], isFaceDown: false },
+            { value: ['♥', '7'], isFaceDown: true },
+            { value: ['♥', '8'], isFaceDown: true },
+            { value: ['♥', '9'], isFaceDown: true },
+            { value: ['♥', '10'], isFaceDown: true },
+            { value: ['♥', 'J'], isFaceDown: true },
+            { value: ['♥', 'Q'], isFaceDown: true },
+            { value: ['♥', 'K'], isFaceDown: false },
+            ]
+
+            /*window.onLoad = (event) => {
+                renderCardList()
+            }*/
+
+
+            function htmlToElem(html) {
+                let temp = document.createElement('template');
+                html = html.trim(); // Never return a space text node as a result
+                temp.innerHTML = html;
+                return temp.content.firstChild;
+            }
+
+            function renderCardList() {
+                // TODO: define cardZoneElm here
+                const cardZoneElm = document.getElementsByClassName('card-zone')[0];
+                // before append any DOM(s), you need to clear all children of cardZoneElm
+                const container = document.querySelector('card-zone');
+                
+                while (container.firstChild) {
+                    container.removeChild(card-zone.firstChild);
+                }
+
+                for (var idx=0; idx < cardList.length; idx++) {
+                    // TODO:
+                    // if isFaceDown is true, create a card component with 'face-down' class
+                    if (cardList[idx].isFaceDown === true){
+                        cardElm = htmlToElem(
+                        '<div class="card face-down"><div class="card-title"></div><div class="card-body">?</div>'
+                        )
+                    } else {
+                        cardElm = htmlToElem(
+                        '<div class="card"><div class="card-title">♣</div><div class="card-body">9</div></div>'
+                        )
+                    }
+                    cardZoneElm.append(cardElm)
+                }
+            }
+      </script>
     
 </body>
 </html>
