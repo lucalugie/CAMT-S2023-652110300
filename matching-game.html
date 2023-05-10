@@ -157,10 +157,16 @@
 
         var CARD_TYPE = ['♣', '♦', '♥', '♠']
         var CARD_NUMBER = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
-
-        window.onload=function() {
-            renderCardList()
+        
+        window.onload = function() {
+            renderCardList();
         };
+
+        /*var newGameBtn = document.getElementsByClassName('new-game-button')[0];
+        newGameBtn.addEventListener('click', function() {
+            console.log('New game button clicked!');
+            renderCardList();
+        });*/
 
         function htmlToElem(html) {
             let temp = document.createElement('template');
@@ -169,19 +175,45 @@
             return temp.content.firstChild;
         }
 
+        function generateCardList() {
+            var cardList = [];
+            for (var suit = 0; suit < CARD_TYPE.length; suit++) {
+                for (var rank = 0; rank < CARD_NUMBER.length; rank++) {
+                var card = {
+                    value: [CARD_TYPE[suit], CARD_NUMBER[rank]],
+                    isFaceDown: Math.random() < 0.5 // randomly set face down status
+                };
+                /*var value = [CARD_TYPE[suit], CARD_NUMBER[rank]];
+                var isFaceDown = Math.random() < 0.5;*/
+                cardList.push(card);
+                }
+            }
+            // shuffle the cardList 
+            for (let i= cardList.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = cardList [i];
+                cardList [i] = cardList [j];
+                cardList [j] = temp;
+                //[cardList[i], cardList[j]] = [cardList[j], cardList[i]];
+            }
+            return cardList;
+        }
+
         function renderCardList() {
                 // TODO: define cardZoneElm here
             const cardZoneElm = document.getElementsByClassName('card-zone')[0];
                 // before append any DOM(s), you need to clear all children of cardZoneElm
-
-                //cardZoneElm.innerHTML = '';
+            //cardZoneElm.innerHTML = '';
             while (cardZoneElm.firstChild) {
                 cardZoneElm.removeChild(cardZoneElm.firstChild);
-            }
-                
+            };
 
+            cardList = generateCardList();
+            
              for (var idx=0; idx < cardList.length; idx++) {
                     // TODO:
+                    var suit = cardList[idx].value[0];
+                    var rank = cardList[idx].value[1];
                     // if isFaceDown is true, create a card component with 'face-down' class
                     if (cardList[idx].isFaceDown === true){
                         cardElm = htmlToElem(
@@ -191,20 +223,20 @@
                         cardElm = htmlToElem(
                         '<div class="card"><div class="card-title">♣</div><div class="card-body">9</div></div>'
                         )
+                        cardElm.getElementsByClassName('card-title')[0].innerHTML = suit;
+                        cardElm.getElementsByClassName('card-body')[0].innerHTML = rank;
+                        if (cardList[idx].value[0] === '♥' || cardList[idx].value[0] === '♦') {
+                            cardElm.style.borderColor = 'red';
+                            cardElm.style.color = 'red';
+                        } else {
+                            cardElm.style.borderColor = '';
+                            cardElm.style.color = '';
+                        }
                     }
                     cardZoneElm.append(cardElm)
             }
-        
-                var cardTitle = CARD_TYPE[random(CARD_TYPE.length)];
-                var cardBody = CARD_NUMBER[random(CARD_NUMBER.length)];
-
         }
-        function random(max) {
-            return parseInt(Math.random() * max) % max;
-        }
-
-
-
+            
       </script>
     
 </body>
