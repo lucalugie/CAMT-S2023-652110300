@@ -157,7 +157,7 @@
 
         var CARD_TYPE = ['♣', '♦', '♥', '♠']
         var CARD_NUMBER = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
-        
+        //----------------------------------------------------------------------------------------//
         window.onload = function() {
             generateCardList();
             renderCardList();
@@ -168,10 +168,11 @@
             generateCardList();
             renderCardList();
         });
-        
+        //----------------------------------------------------------------------------------------//
         function random(max) {
             return parseInt(Math.random() * max) % max;
         }
+
         // create cardList with 52 cards that follow in pattern
         function generateCardList() {
             cardList = [];
@@ -185,8 +186,8 @@
                 }
             }
             shuffleCardList(cardList);
-
         }
+
         // shuffle the cardList 
         function shuffleCardList(arrayList){
             for (let i= arrayList.length - 1; i > 0; i--) {
@@ -195,8 +196,8 @@
                 arrayList [i] = arrayList [j];
                 arrayList [j] = temp;
             }
-
         }
+
         function htmlToElem(html) {
             let temp = document.createElement('template');
             html = html.trim(); // Never return a space text node as a result
