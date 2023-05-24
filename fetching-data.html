@@ -72,6 +72,8 @@
     // BEGIN: UI Control and logic zone
     function bindEvents() {
     var addButtonElm = document.getElementById("todo-add-button");
+    var deleteButtonElm = document.getElementById("todo-delete-button");
+
     addButtonElm.addEventListener("click", function () {
         var inputElm = document.getElementById("todo-input");
         var todoValue = inputElm.value;
@@ -82,11 +84,18 @@
         });
         }
     });
+    //delete
+    deleteButtonElm.addEventListener("click", function () {
+        
+
+    });
+
+
     }
 
 
     //<-------------------------------------------------------------------->
-    var deleteButtonElm = document.getElementById("todo-delete-button");
+    
     function deleteTodoItem(id, afterDeleteFunction) {
     var headers = new Headers();
     headers.append("Content-Type", "application/json");
@@ -102,6 +111,7 @@
         });
     });
     }
+
 
     //<-------------------------------------------------------------------->
     
