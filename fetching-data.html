@@ -3,14 +3,14 @@
     <div class="container">
       <input type="text" id="todo-input" />
       <button id="todo-add-button">add</button>
-      <button id="todo-delete-button">delete</button>
+     <!--<button id="todo-delete-button">delete</button>--> 
       <div id="todo-list-container">
       </div>
     </div>
     <script>
         /* open crudcrud.com and then replace ID and resource name. */
     // BEGIN: configuration zone
-    var CRUD_CURD_ID = "95f5c39ebbdd4435901f03ad1452940a";
+    var CRUD_CURD_ID = "9f4511c75fdf4952a062d3cf1a568a54";
     var CRUD_CURD_RESOURCE_NAME = "todo";
     var CURD_CURD_API_ENDPOINT =
     "https://crudcrud.com/api/" + CRUD_CURD_ID + "/" + CRUD_CURD_RESOURCE_NAME;
@@ -72,7 +72,7 @@
     // BEGIN: UI Control and logic zone
     function bindEvents() {
     var addButtonElm = document.getElementById("todo-add-button");
-    var deleteButtonElm = document.getElementById("todo-delete-button");
+    
 
     addButtonElm.addEventListener("click", function () {
         var inputElm = document.getElementById("todo-input");
@@ -85,10 +85,13 @@
         }
     });
     //delete
+   /* var deleteButtonElm = document.getElementById("todo-delete-button");
     deleteButtonElm.addEventListener("click", function () {
+        deleteTodoItem( function () {
+            refreshTodoList()
+        });
         
-
-    });
+    });*/
 
 
     }
@@ -97,19 +100,12 @@
     //<-------------------------------------------------------------------->
     
     function deleteTodoItem(id, afterDeleteFunction) {
-    var headers = new Headers();
-    headers.append("Content-Type", "application/json");
-    
     var requestOptions = {
         method: "DELETE",
-        headers: headers
     };
-    
-    fetch(CURD_CURD_API_ENDPOINT+'/'+id, requestOptions).then(function (response) {
-        response.json().then(function (data) {
-        afterDeleteFunction(data);
-        });
-    });
+    fetch(CURD_CURD_API_ENDPOINT+'/'+id, requestOptions).then(afterDeleteFunction)
+ 
+
     }
 
 
@@ -122,11 +118,13 @@
     for (var idx = 0; idx < APPLICATION_STATE.todoList.length; idx++) {
         var todoItem = APPLICATION_STATE.todoList[idx];
         var todoItemElm = htmlToElem(
-        '<div class="todo-item">' + todoItem.name + "</div>"
-        );
+            `<div class="todo-item">${todoItem.name}<button onclick="deleteTodoItem('${todoItem._id}',() => refreshTodoList())">delete</button></div>`);
         todoListElm.append(todoItemElm);
     }
     }
+    /*todoItemElm.addEventListener('click', function () {
+            deleteTodoItem('${todoItem._id}', () => refreshTodoList())
+        })*/
     
     function refreshTodoList () {
     loadTodoList(function (data) {
