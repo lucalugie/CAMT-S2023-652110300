@@ -7,10 +7,13 @@
       <div id="todo-list-container">
       </div>
     </div>
+    <audio id="myAudio"><source src="game.wav" type="audio/mpeg"></audio>
+    <audio id="myAudio2"><source src="dog.wav" type="audio/mpeg"></audio>
+
     <script>
         /* open crudcrud.com and then replace ID and resource name. */
     // BEGIN: configuration zone
-    var CRUD_CURD_ID = "9f4511c75fdf4952a062d3cf1a568a54";
+    var CRUD_CURD_ID = "8a0c57cce1414a0c9e64a66d6ef39ab7";
     var CRUD_CURD_RESOURCE_NAME = "todo";
     var CURD_CURD_API_ENDPOINT =
     "https://crudcrud.com/api/" + CRUD_CURD_ID + "/" + CRUD_CURD_RESOURCE_NAME;
@@ -49,6 +52,7 @@
     }
     
     function addNewTodoItem(value, afterAddFunction) {
+    playAudio();
     var headers = new Headers();
     headers.append("Content-Type", "application/json");
     
@@ -72,7 +76,6 @@
     // BEGIN: UI Control and logic zone
     function bindEvents() {
     var addButtonElm = document.getElementById("todo-add-button");
-    
 
     addButtonElm.addEventListener("click", function () {
         var inputElm = document.getElementById("todo-input");
@@ -100,13 +103,14 @@
     //<-------------------------------------------------------------------->
     
     function deleteTodoItem(id, afterDeleteFunction) {
+        playAudio2();
     var requestOptions = {
-        method: "DELETE",
-    };
-    fetch(CURD_CURD_API_ENDPOINT+'/'+id, requestOptions).then(afterDeleteFunction)
- 
-
-    }
+    method: "DELETE",
+  };
+  fetch(CURD_CURD_API_ENDPOINT + '/' + id, requestOptions).then(function() {
+    afterDeleteFunction();
+  });
+}
 
 
     //<-------------------------------------------------------------------->
@@ -115,17 +119,27 @@
     var todoListElm = document.getElementById("todo-list-container");
     todoListElm.innerHTML = "";
     
-    for (var idx = 0; idx < APPLICATION_STATE.todoList.length; idx++) {
+    for (var idx = 0; idx < APPLICATION_STATE.todoList.length; idx++) { 
         var todoItem = APPLICATION_STATE.todoList[idx];
         var todoItemElm = htmlToElem(
             `<div class="todo-item">${todoItem.name}<button onclick="deleteTodoItem('${todoItem._id}',() => refreshTodoList())">delete</button></div>`);
         todoListElm.append(todoItemElm);
-    }
-    }
-    /*todoItemElm.addEventListener('click', function () {
+       /* todoItemElm.addEventListener('click', function () {
             deleteTodoItem('${todoItem._id}', () => refreshTodoList())
         })*/
+    }
+    }
     
+    var x = document.getElementById("myAudio");
+    function  playAudio() {
+    x.play();
+    }
+    var y = document.getElementById("myAudio2");
+    function  playAudio2() {
+    y.play();
+    }
+
+
     function refreshTodoList () {
     loadTodoList(function (data) {
         APPLICATION_STATE.todoList = data;
